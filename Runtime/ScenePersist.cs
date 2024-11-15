@@ -1,25 +1,27 @@
 using UnityEngine;
 
-namespace Commons.Utils;
-
-public class ScenePersist: MonoBehaviour 
+namespace Commons.Utils
 {
-    void Awake()
-    {
-        var numScenePersists = FindObjectsOfType<ScenePersist>().Length;
-        if (numScenePersists > 1)
-        {
-            ResetScenePersist();
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
-    public void ResetScenePersist()
+    public class ScenePersist : MonoBehaviour
     {
-        gameObject.SetActive(false);
-        Destroy(gameObject);
+        void Awake()
+        {
+            var numScenePersists = FindObjectsOfType<ScenePersist>().Length;
+            if (numScenePersists > 1)
+            {
+                ResetScenePersist();
+            }
+            else
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+        }
+
+        public void ResetScenePersist()
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 }

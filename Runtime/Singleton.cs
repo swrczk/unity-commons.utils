@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 
-namespace Commons.Utils;
-
-public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+namespace Commons.Utils
 {
-    public static T Instance { get; private set; }
-
-    protected virtual void Awake()
+    public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        if (Instance != null)
-        {
-            DestroyImmediate(this);
-            return;
-        }
+        public static T Instance { get; private set; }
 
-        Instance = GetComponent<T>();
+        protected virtual void Awake()
+        {
+            if (Instance != null)
+            {
+                DestroyImmediate(this);
+                return;
+            }
+
+            Instance = GetComponent<T>();
+        }
     }
 }
