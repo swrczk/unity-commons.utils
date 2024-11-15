@@ -1,6 +1,6 @@
 {
   "name": "com.swrczk.unity-commons.utils",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "displayName": "Utils",
   "description": "Most commonly used scripts. Their implementation is independent of each other.",
   "unity": "2021.3",
